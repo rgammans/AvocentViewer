@@ -50,7 +50,7 @@ How do I build the Image
 This repository contains a YML build file suitable for
 the pkg2appimage_ binary builder.
 
-.. _pk2appimage: https://github.com/AppImage/pkg2appimage
+.. _pkg2appimage: https://github.com/AppImage/pkg2appimage
 
 You will also need  copy of the Java 6u27 installer which can
 (at the moment anyway) be downloaded from Oracle, and the jar
@@ -92,8 +92,10 @@ The simplest way is to keep a record of the DSRQ-Id of the Server
 interface module for the serves you are interet in and use the -r 
 form of the command line below.
 
-./<AppImage> SERVERNAME KVMHOST -p portnumber
-./<AppImage> SERVERNAME KVMHOST -r DSQRId
+::
+
+    ./<AppImage> SERVERNAME KVMHOST -p portnumber
+    ./<AppImage> SERVERNAME KVMHOST -r DSQRId
 
 Options:
     -p  Portnumber that the required server is connected to.
