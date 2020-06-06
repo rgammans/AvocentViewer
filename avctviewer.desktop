@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Avocent_HP Console viewer
+Icon=avctviewer
+Exec=avctviewer %u
+Categories=GNOME;GTK;Network;WebBrowser;
+StartupNotify=true

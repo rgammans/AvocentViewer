@@ -1,0 +1,18 @@
+app: avctviewer
+#binpatch: true
+
+ingredients:
+  script:
+    - echo "=============================="
+    - mkdir -p avctviewer.AppDir/usr/share/avctviewer
+    - mkdir -p avctviewer.AppDir/usr/bin
+    - cp ../*.jar avctviewer.AppDir/usr/share/avctviewer
+    - cp ../avctviewer.sh avctviewer.AppDir/usr/bin/avctviewer
+    - cp ../avctviewer.desktop avctviewer.AppDir/usr/share/applications
+    - cp ../avctviewer.desktop avctviewer.AppDir/.
+    - cp ../avctviewer.png avctviewer.AppDir/.
+
+
+script:
+  - cp ../../java.security etc/java-6-openjdk/security/
+  - ( cd usr; ../../../jre-6u27-linux-x64.bin )

@@ -1,0 +1,5 @@
+avctviewer/*
+
+# Actually it would be good to iclude them; but copyright
+*.jar
+jre-6u27-linux-x64.bin
