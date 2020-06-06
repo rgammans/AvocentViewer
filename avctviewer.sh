@@ -4,7 +4,7 @@ JAVAPATH=$APPDIR/usr/jre1.6.0_27/
 man() {
  cat - >&2 <<EOF
 NAME
-   view - Connect to an Avocent (or OEM) IP KVM Switch
+   $ARGV0 - Connect to an Avocent (or OEM) IP KVM Switch
 
 
 
@@ -15,8 +15,8 @@ EOF
 usage() {
     
  cat - >&2 <<EOF
-view Server ipaddress -p portnumber
-view Server ipaddress -r DSQRId
+$ARGV0 SERVERNAME KVMHOST -p portnumber
+$ARGV0 SERVERNAME KVMHOST -r DSQRId
 
 Options:
     -p  Portnumber that the required server is connected to.
@@ -42,11 +42,20 @@ OEM="HP"
 optspec="hp:r:t:u:P:"
 
 
-SERVERNAME=$1; shift;
-IPADDRESS=$1; shift;
+SERVERNAME=$1; 
+case  "x$SERVERNAME" in
+    x-h)  ;;
+    x-*|x) fatal "Expected Servername before options" ;;
+    *) shift ;;
+esac
 
-## Todo check neither server name or
-#  IP address start with a '-'
+IPADDRESS=$1; 
+case  "x$IPADDRESS" in
+    x-h)  ;;
+    x-*|x) fatal "Expected Hostname before options" ;;
+    *) shift ;;
+esac
+
 while getopts "$optspec" optchar ; do
     case "$optchar" in
         h) usage; exit 0 ;;

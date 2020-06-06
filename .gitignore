@@ -1,4 +1,5 @@
 avctviewer/*
+out/
 
 # Actually it would be good to iclude them; but copyright
 *.jar
