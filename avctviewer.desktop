@@ -4,4 +4,4 @@ Name=Avocent KVM Console viewer
 Icon=avctviewer
 Exec=avctviewer %u
 Categories=Network;RemoteAccess;Java
-StartupNotify=rue
+StartupNotify=true
