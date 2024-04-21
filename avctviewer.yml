@@ -14,5 +14,6 @@ ingredients:
 
 
 script:
-  - cp ../../java.security etc/java-6-openjdk/security/
   - ( cd usr; ../../../jre-6u27-linux-x64.bin )
+  - mkdir -p etc/java-6-openjdk/security/
+  - cp ../../java.security etc/java-6-openjdk/security/
